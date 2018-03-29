@@ -1,28 +1,29 @@
 
 class WKafelek {
-    constructor(type, skrut, tekst) {
+    constructor(type, skrut, tekst) { // do czego służy arg type? nie jest nigdzie wykorzystany
         this.skrut = skrut;
         this.tekst = tekst;
-    };
-};
+    }
+}
 
 class kafelek extends WKafelek {
-    constructor(skrut, tekst) {
+    constructor( skrut, tekst) {
         super('kafelek', skrut, tekst)
-    };
+    }
 
-    wstaw_tekst() {
-        console.log("dzia�a");
-    };
+    wstaw_tekst() { // zakładam że metoda ma zapisać tablicę w cookies lub localstorage?
+        console.log( JSON.stringify( tab1 ) ); // Zapisuje tablicę obiektów. Działaj dalej :)
+    }
 
     rysyj_kafelek() {
-        var kaf1Html = '<div id="kafelek1" class="kaf"><a id="skrut">' + this.skrut + '</a></div>';
+        
+        // przyjrzy się temu
+        var kaf1Html = '<div id="kafelek1" class="kaf"><a id="skrut">' + this.skrut + '</a></div>'; // id="skrut" oraz id="kafelek1" będzie powtarzać się w kolejnych kafelkach. Atrybut id powinien mieć unikalną wartość.
+        
         var ElwmentK = $(kaf1Html);
         $('#t').append(ElwmentK);
-    };
-
-
-};
+    }
+}
 
 var tab1= [];
 
@@ -36,10 +37,13 @@ $(function () {
         var skrut = tekst[0] + tekst[1];
 
         const k1 = new kafelek(skrut, tekst);
+        
         tab1.push(k1);
+        k1.wstaw_tekst(); // nie wywołałeś metody, dlatego nie działała
 
         
         k1.rysyj_kafelek();
+        
 
         //document.selection.createRange().text = 'twoj text z prompt';
        // function f() {
