@@ -2,20 +2,27 @@
 <html lang="pl">
 
 <head>
-    
     <title>SpidText</title>
-    <script src="jquery-3.2.1.min.js"> </script>
-    <script src="background.js"  language=javascript type="text/javascript"> </script> 
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="background.js"></script> 
 
     <link rel="stylesheet" href="reset.css" type="text/css" />
     <link rel="stylesheet" href="style.css" type="text/css" />
-
 </head>
 <body>
-    <div class="kg"> 
-        <div id="kDodaj" class="kaf1"><a id="skrut">NE</a></div>  
+    <div class="gdiv"> 
+        <div id="K_Dodaj" class="kafelki_glowne" title="Dodaj nową szufladkę."><a class="a">DK</a></div>
+        <div id="K_Usun" class="kafelki_glowne" title="Usuń szufladkę."><a class="a">UK</a></div>  
+        <div style="clear:both;"></div>
     </div>   
-    <div class="kg" id= "t">
-    </div> 
+    <div class="kg" id= "divzk">
+     <!--<div class="kaf" id="kafelek1" title="tekst"><a>TU</a></div>-->
+    </div>
+    <form action="">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="submit" value="Zapisz">
+    </form>
 </body>
 </html>
